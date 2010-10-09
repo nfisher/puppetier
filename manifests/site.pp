@@ -1,4 +1,5 @@
 import "classes/*"
+import "users/*"
 
 case $operatingsystem {
   SLES: {
@@ -15,7 +16,10 @@ node default {
 }
 
 node "domu-12-31-38-04-28-a1.compute-1.internal" {
-	include apache2-server
+	include build-essentials
 	include ruby
+	include apache2-server
+	include apache-passenger
 	include mysql-server
+	include nfisher
 }
